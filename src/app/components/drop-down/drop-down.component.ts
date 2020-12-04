@@ -1,26 +1,4 @@
-import {
-  AnimationTriggerMetadata,
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from '@angular/animations';
-import {
-  Component,
-  ContentChild,
-  ContentChildren,
-  ElementRef,
-  Input,
-  OnInit,
-  QueryList,
-  ViewChild,
-} from '@angular/core';
-import { merge, fromEvent, from } from 'rxjs';
-import { mapTo } from 'rxjs/operators';
-import { DropdownmenuComponent } from './dropdownmenu/dropdownmenu.component';
-import { DropDownDDirective } from './drop-down-d.directive';
-
+import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'R-drop-down',
   template: ` <div rDropDownD [dropMenu]="menu" rTrigger="click">
