@@ -9,6 +9,7 @@ import { DropDownDDirective } from './components/drop-down/drop-down-d.directive
 import { DropDownItemDDirective } from './components/drop-down/drop-down-item-d.directive';
 import { DropdownmenuComponent } from './components/drop-down/dropdownmenu/dropdownmenu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginationComponent } from './components/pagination/pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DropDownDDirective,
     DropDownItemDDirective,
     DropdownmenuComponent,
+    PaginationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
