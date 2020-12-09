@@ -1,13 +1,28 @@
 <div class="appcontainer">
-  <!-- <div class="dropDown">
+  <div class="dropDown">
     <R-drop-down [menuList]="menuList"></R-drop-down>
   </div>
-  <br> -->
+  <br />
   <div class="pagination">
     <R-pagination
       [currentPage]="1"
       [totalPage]="15"
+      paginationType="simple"
+      [showInputPage]="true"
+    ></R-pagination>
+    <br />
+    <R-pagination
+      [currentPage]="1"
+      [totalPage]="7"
       paginationType="usual"
+      [showInputPage]="true"
+    ></R-pagination>
+    <br />
+    <R-pagination
+      [currentPage]="10"
+      [totalPage]="30"
+      paginationType="usual"
+      [showInputPage]="true"
     ></R-pagination>
   </div>
   <router-outlet></router-outlet>

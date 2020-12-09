@@ -3,7 +3,7 @@ import { fadeInOut } from '../fadeAnimation';
 @Component({
   selector: 'R-dropdownmenu',
   template: `<div
-    style="position:absolute;top:30px;padding-top:3px;left:0;"
+    style="position:absolute;top:30px;padding-top:3px;left:0;z-index:100"
     [@fadeInOut]="ifDown ? 'bottom' : 'void'"
     *ngIf="ifDown"
   >

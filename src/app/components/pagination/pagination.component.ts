@@ -15,66 +15,80 @@ import { element } from 'protractor';
   selector: 'R-pagination',
   // templateUrl: './pagination.component.html',
   template: `
-    <div class="pagination">
-      <div class="changePage pre">
-        <button
-          #pre
-          [class.disable]="currentPage == 1"
-          [disabled]="currentPage <= 1"
-          (click)="changePage(0)"
-        >
-          &lt;
-        </button>
-      </div>
-      <div *ngIf="paginationType === 'simple'" class="num">
-        {{ currentPage + '/' + totalPage }}
-      </div>
-      <div class="num usual" *ngIf="paginationType === 'usual'">
-        <li
-          *ngIf="pageNums[0] >= 2"
-          class="item first"
-          [class.active]="currentPage == 1"
-          (click)="goNumPage(1)"
-        >
-          1
-        </li>
-        <li class="item" *ngIf="pageNums[0] > 2" (click)="showMore(1)">···</li>
-        <ng-container *ngFor="let item of pageNums; let ind = index">
-          <li
-            *ngIf="ind < 8"
-            class="item"
-            [class.active]="item == currentPage"
-            (click)="goNumPage(item)"
+    <div class="pagination-wrap flex-center">
+      <div class="pagination">
+        <div class="changePage pre">
+          <button
+            #pre
+            [class.disable]="currentPage == 1"
+            [disabled]="currentPage <= 1"
+            (click)="changePage(0)"
           >
-            {{ item }}
+            &lt;
+          </button>
+        </div>
+        <div *ngIf="paginationType === 'simple'" class="num">
+          {{ currentPage + '/' + totalPage }}
+        </div>
+        <div class="num usual" *ngIf="paginationType === 'usual'">
+          <li
+            *ngIf="totalPage > 7"
+            class="item first"
+            [class.active]="currentPage == 1"
+            (click)="goNumPage(1)"
+          >
+            1
           </li>
-        </ng-container>
-        <li
-          (click)="showMore(2)"
-          class="item"
-          *ngIf="
-            totalPage > 8 + 1 && pageNums[pageNums.length - 1] + 1 < totalPage
-          "
-        >
-          ···
-        </li>
-        <li
-          (click)="goNumPage(totalPage)"
-          class="item last"
-          *ngIf="totalPage > 8"
-          [class.active]="currentPage == totalPage"
-        >
-          {{ totalPage }}
-        </li>
+          <li
+            *ngIf="currentPage - 2 > 1 && totalPage > 7"
+            class="item"
+            (click)="showMore(1)"
+          >
+            ···
+          </li>
+          <ng-container *ngFor="let item of pageNums; let ind = index">
+            <li
+              class="item"
+              [class.active]="item == currentPage"
+              (click)="goNumPage(item)"
+            >
+              {{ item }}
+            </li>
+          </ng-container>
+          <li
+            *ngIf="currentPage + 2 < totalPage && totalPage > 7"
+            (click)="showMore(2)"
+            class="item"
+          >
+            ···
+          </li>
+          <li
+            *ngIf="totalPage > 7"
+            (click)="goNumPage(totalPage)"
+            class="item last"
+            [class.active]="currentPage == totalPage"
+          >
+            {{ totalPage }}
+          </li>
+        </div>
+        <div class="changePage next">
+          <button
+            (click)="changePage(1)"
+            #next
+            [class.disable]="currentPage == totalPage"
+            [disabled]="currentPage >= totalPage"
+          >
+            &gt;
+          </button>
+        </div>
       </div>
-      <div class="changePage next" (click)="changePage(1)">
-        <button
-          #next
-          [class.disable]="currentPage == totalPage"
-          [disabled]="currentPage >= totalPage"
-        >
-          &gt;
-        </button>
+      <div *ngIf="showInputPage" class="inputPage flex-center">
+        去&nbsp;<input
+          type="number"
+          [value]="inputValue"
+          (input)="inputValue = $event.target.value"
+          (keyup.enter)="goNumPage(inputValue)"
+        />&nbsp;页
       </div>
     </div>
   `,
@@ -84,6 +98,7 @@ export class PaginationComponent implements OnInit {
   @Input() currentPage = 1;
   @Input() totalPage = 0;
   @Input() paginationType = 'simple';
+  @Input() showInputPage = false;
   @Output() changePageEmit: EventEmitter<any> = new EventEmitter();
   @ViewChild('pre') pre: ElementRef;
   @ViewChild('next') next: ElementRef;
@@ -92,6 +107,7 @@ export class PaginationComponent implements OnInit {
   pageNums = [];
   showFistLast = false;
   showLast = false;
+  inputValue: number | null;
 
   constructor(private el: ElementRef, private render: Renderer2) {}
 
@@ -118,10 +134,11 @@ export class PaginationComponent implements OnInit {
     } else {
       return;
     }
-    //更新pageNums
-    if (this.pageNums.indexOf(this.currentPage) == -1) {
-      this.updatePageNum(this.currentPage + 1, 1);
+    //总页数小于等于7则全部展示
+    if (this.totalPage > 7) {
+      this.updatePageNum();
     }
+    //回调
     this.changePageEmit.emit(this.currentPage);
   }
 
@@ -155,35 +172,44 @@ export class PaginationComponent implements OnInit {
   }
 
   /**
-   *
+   *初始化pageNums
    */
   initPageNum() {
-    this.pageNums = new Array<number>(this.totalPage)
-      .fill(0)
-      .map((ele, ind) => 1 + ind)
-      .filter((ele, ind) => {
-        return ind < 8;
-      });
+    if (this.totalPage <= 7) {
+      this.pageNums = new Array<number>(this.totalPage)
+        .fill(0)
+        .map((ele, ind) => 1 + ind);
+    } else {
+      this.updatePageNum();
+    }
   }
 
   /**
-   *
-   * @param number
-   * @param t 1加 -1减
+   * 更新pageNums
    */
-  updatePageNum(number, t) {
-    const len = this.pageNums.length;
-    const pageNumLast = this.pageNums[len - 1] + 1;
-    if (
-      (t == 1 && (number <= 1 || pageNumLast >= this.totalPage)) ||
-      (t == -1 && (number <= 2 || this.pageNums[0] <= 2))
-    ) {
-      return;
+  updatePageNum() {
+    let s, t; //pageNums开始和结束
+    if (this.currentPage - 2 > 1) {
+      s = this.currentPage - 2;
+    } else {
+      s = 2;
     }
-    this.pageNums = this.pageNums.map((ele, ind) => {
-      return ele + t;
-    });
-    console.log(t, this.pageNums, pageNumLast);
+    if (this.currentPage + 2 < this.totalPage) {
+      t = this.currentPage + 2;
+    } else {
+      t = this.totalPage - 1;
+    }
+    if (this.currentPage <= 3) {
+      s = 2;
+      t = s + 3;
+    }
+    if (this.currentPage + 2 >= this.totalPage) {
+      s = this.totalPage - 4;
+      t = this.totalPage - 1;
+    }
+    this.pageNums = new Array<number>(t - s + 1)
+      .fill(0)
+      .map((ele, ind) => s + ind);
   }
 
   /**
@@ -191,26 +217,31 @@ export class PaginationComponent implements OnInit {
    * @param number
    */
   goNumPage(number) {
-    const t =
-      number > this.currentPage ? 1 : number == this.currentPage ? 0 : -1;
-    if (number == 0) {
-      return;
-    }
-    this.currentPage = number;
-    if (this.totalPage >= 8) {
-      this.updatePageNum(number, t);
-    }
-    if (number == 1) {
-      this.initPageNum();
-    }
-    this.changePageEmit.emit(number);
+    let _number = Number(number);
+    _number =
+      _number < 1 ? 1 : _number > this.totalPage ? this.totalPage : _number;
+    this.currentPage = _number;
+    //清空inputValue
+    this.inputValue = null;
+    this.updatePageNum();
+    this.changePageEmit.emit(_number);
   }
 
+  /**
+   * 每次增加或减少2
+   * @param type 1 减少 2增加
+   */
   showMore(type) {
-    // if (type == 1) {
-    //   this.currentPage -= 3;
-    // } else {
-    //   this.currentPage += 3;
-    // }
+    if (type == 1) {
+      this.currentPage = this.currentPage - 2 >= 1 ? this.currentPage - 2 : 1;
+    } else {
+      this.currentPage =
+        this.currentPage + 2 <= this.totalPage
+          ? this.currentPage + 2
+          : this.totalPage;
+    }
+    this.updatePageNum();
+    //回调
+    this.changePageEmit.emit(this.currentPage);
   }
 }
