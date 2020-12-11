@@ -1,0 +1,31 @@
+<div class="rate-container">
+  <div class="rate" (mouseleave)="rateLeave()">
+    <ng-container *ngFor="let item of startNums">
+      <div
+        #starItem
+        class="img-wrap"
+        (mousemove)="mouseMove($event, item)"
+        (click)="star($event, item)"
+        [class.only-read]="onlyRead"
+      >
+        <img
+          *ngIf="item > currentScore"
+          src="../../../assets/img/empty-star.svg"
+          alt=""
+        />
+        <img
+          class="half-star"
+          *ngIf="item == currentScore + 0.5 && showHalf"
+          src="../../../assets/img/half-star.svg"
+          alt=""
+        />
+        <img
+          class="complete-star"
+          *ngIf="item <= currentScore"
+          src="../../../assets/img/complete-star.svg"
+          alt=""
+        />
+      </div>
+    </ng-container>
+  </div>
+</div>

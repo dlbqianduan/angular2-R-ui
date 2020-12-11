@@ -115,6 +115,8 @@ export class PaginationComponent implements OnInit {
     this.initPageNum();
   }
 
+  // ngOnChanges()
+
   /**
    * 左右切换
    * @param type 0 上一页 1 下一页
@@ -188,6 +190,10 @@ export class PaginationComponent implements OnInit {
    * 更新pageNums
    */
   updatePageNum() {
+    //totalPage小于8不更新pageNums
+    if (this.totalPage < 8) {
+      return;
+    }
     let s, t; //pageNums开始和结束
     if (this.currentPage - 2 > 1) {
       s = this.currentPage - 2;

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>星形</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的作业" transform="translate(-1006.000000, -410.000000)" fill="#FFD634">
+            <polygon id="星形" transform="translate(1012.000000, 416.000000) rotate(-5.000000) translate(-1012.000000, -416.000000) " points="1012 419.482003 1008.47329 420.854102 1008.68842 417.075998 1006.29366 414.145898 1009.95333 413.183 1012 410 1014.04667 413.183 1017.70634 414.145898 1015.31158 417.075998 1015.52671 420.854102"></polygon>
+        </g>
+    </g>
+</svg>

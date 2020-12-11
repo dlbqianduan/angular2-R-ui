@@ -10,6 +10,7 @@ import { DropDownItemDDirective } from './components/drop-down/drop-down-item-d.
 import { DropdownmenuComponent } from './components/drop-down/dropdownmenu/dropdownmenu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { RateComponent } from './components/rate/rate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     DropDownItemDDirective,
     DropdownmenuComponent,
     PaginationComponent,
+    RateComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
