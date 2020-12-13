@@ -11,6 +11,7 @@ import { DropdownmenuComponent } from './components/drop-down/dropdownmenu/dropd
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { RateComponent } from './components/rate/rate.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { RateComponent } from './components/rate/rate.component';
     DropdownmenuComponent,
     PaginationComponent,
     RateComponent,
+    CalendarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

@@ -1,0 +1,87 @@
+.calendar-container {
+  width: 100%;
+  box-sizing: border-box;
+  .top {
+    padding: 0 15px;
+    font-size: 18px;
+    background: linear-gradient(to right, rgb(183, 20, 233), rgb(240, 20, 20));
+    border-radius: 5px 5px 0 0;
+    span {
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      cursor: pointer;
+      &.time {
+        width: max-content;
+        letter-spacing: 2px;
+        .year,
+        .month {
+          padding: 0 5px;
+          &:hover {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  .week,
+  .day {
+    width: 14.2857%;
+    height: 45px;
+    box-sizing: border-box;
+    line-height: 45px;
+    text-align: center;
+    border: 1px solid transparent;
+  }
+  .week {
+    border: 1px solid #888;
+    border-left: 0;
+    border-top: 0;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+  .content {
+    border: 1px solid #888;
+    border-top: 0;
+  }
+  .content-day {
+    flex-wrap: wrap;
+    justify-content: start;
+    .day {
+      cursor: pointer;
+      margin-bottom: 10px;
+      &:hover {
+        color: rgb(183, 20, 233) !important;
+        border: 1px solid rgb(183, 20, 233);
+        border-radius: 2px;
+      }
+      &.gray {
+        color: #888;
+      }
+      &.active {
+        position: relative;
+        color: rgb(183, 20, 233) !important;
+        font-weight: bold;
+        font-size: 24px;
+        border-radius: 2px;
+      }
+    }
+  }
+  .month-year-item {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .item {
+      width: 33.33%;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        color: rgb(183, 20, 233);
+        font-weight: bold;
+      }
+    }
+  }
+}
