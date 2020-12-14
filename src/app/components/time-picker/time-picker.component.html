@@ -1,0 +1,54 @@
+<div class="time-picker-container">
+  <div class="top flex">
+    <input (click)="open()" [value]="timeValue" placeholder="请选择时间" />
+    <i
+      *ngIf="!showClear"
+      class="calendar-icon"
+      (click)="clear()"
+      (mouseenter)="mouseEnter()"
+    ></i>
+    <i *ngIf="showClear" class="calendar-icon clear" (click)="clear()"></i>
+  </div>
+  <div
+    *ngIf="showTimer"
+    [@dateFade]="showTimer ? 'bottom' : 'void'"
+    class="timer-select"
+  >
+    <div class="time flex">
+      <ul id="item0">
+        <li
+          [id]="'item0' + ind"
+          *ngFor="let item of hourArr; let ind = index"
+          (click)="chooseTime(0, item)"
+          [class.active]="item == hour"
+        >
+          {{ item }}
+        </li>
+      </ul>
+      <ul>
+        <li
+          [id]="'item1' + ind"
+          *ngFor="let item of timesArr; let ind = index"
+          (click)="chooseTime(1, item)"
+          [class.active]="item == minute"
+        >
+          {{ item }}
+        </li>
+      </ul>
+      <ul>
+        <li
+          [id]="'item2' + ind"
+          *ngFor="let item of timesArr; let ind = index"
+          (click)="chooseTime(2, item)"
+          [class.active]="item == second"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+    <div class="btn flex">
+      <button class="cancel" (click)="close()">当前时间</button
+      ><button class="confirm" (click)="close()">确认</button>
+    </div>
+  </div>
+</div>
