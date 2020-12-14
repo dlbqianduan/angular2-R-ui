@@ -1,0 +1,17 @@
+<div class="date-picker-container">
+  <div class="top flex" (click)="chooseDate()">
+    <input [value]="dateValue" placeholder="请选择日期" />
+    <i class="calendar-icon"></i>
+  </div>
+
+  <div
+    *ngIf="showCalendar"
+    [@dateFade]="showCalendar ? 'bottom' : 'void'"
+    class="calendar"
+  >
+    <R-calendar
+      [dateValue]="dateValue"
+      (chooseDateEmit)="close($event)"
+    ></R-calendar>
+  </div>
+</div>

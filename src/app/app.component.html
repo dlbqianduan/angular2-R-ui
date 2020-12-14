@@ -32,9 +32,13 @@
       (starEmit)="star($event)"
     ></R-rate>
   </div>
-  <br>
+  <br />
   <div class="calendar">
     <R-calendar></R-calendar>
+  </div>
+  <br />
+  <div class="date-picker">
+    <R-date-picker [dateValue]="dateValue"></R-date-picker>
   </div>
 
   <router-outlet></router-outlet>

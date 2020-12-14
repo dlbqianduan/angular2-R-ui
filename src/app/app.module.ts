@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { RateComponent } from './components/rate/rate.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     PaginationComponent,
     RateComponent,
     CalendarComponent,
+    DatePickerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular2-R-ui';
+  dateValue = '';
   menuList = [
     '天空很蓝天空很蓝',
     '大地很方大地很方',

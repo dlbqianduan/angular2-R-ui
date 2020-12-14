@@ -1,33 +1,54 @@
 <div class="calendar-container">
-    <div class="top flex">
-        <span (click)="changeTime(1)"><<</span>
-        <span *ngIf="showMainView === 1" (click)="changeTime(2)"><</span>
-        <span class="time">
-            <span *ngIf="showMainView !== 2" class="year" (click)="changeType(2)">{{year}}年</span>
-            <span *ngIf="showMainView === 1" class="month" (click)="changeType(3)">{{month}}月</span>
-            <span *ngIf="showMainView === 2">{{yearAreaArr[0]+'-'+yearAreaArr[yearAreaArr.length - 1]}}</span>
+  <div class="top flex">
+    <span (click)="changeTime(1)"><<</span>
+    <span *ngIf="showMainView === 1" (click)="changeTime(2)"><</span>
+    <span class="time">
+      <span *ngIf="showMainView !== 2" class="year" (click)="changeType(2)"
+        >{{ year }}年</span
+      >
+      <span *ngIf="showMainView === 1" class="month" (click)="changeType(3)"
+        >{{ month }}月</span
+      >
+      <span *ngIf="showMainView === 2">{{
+        yearAreaArr[0] + "-" + yearAreaArr[yearAreaArr.length - 1]
+      }}</span>
+    </span>
+    <span *ngIf="showMainView === 1" (click)="changeTime(3)">></span>
+    <span (click)="changeTime(4)">>></span>
+  </div>
+  <div class="content">
+    <div *ngIf="showMainView === 1">
+      <div class="content-week flex">
+        <span class="week" *ngFor="let item of week">{{ item }}</span>
+      </div>
+      <div class="content-day flex">
+        <span
+          class="day"
+          [class.gray]="item.month !== month"
+          [class.active]="item.day == day && item.month == month"
+          *ngFor="let item of dayArr"
+          (click)="chooseDay(item)"
+        >
+          {{ item.day }}
         </span>
-        <span *ngIf="showMainView === 1" (click)="changeTime(3)">></span>
-        <span (click)="changeTime(4)">>></span>
-    </div>
-    <div class="content">
-    <div  *ngIf="showMainView === 1">
-        <div class="content-week flex">
-            <span class="week" *ngFor="let item of week">{{item}}</span>
-        </div>
-        <div class="content-day flex">
-            <span class="day" [class.gray]="item.month !== month" [class.active]="item.day == day && item.month == month" *ngFor="let item of dayArr" (click)="chooseDay(item)">
-                {{item.day}}
-            </span>
-        </div>   
+      </div>
     </div>
     <div class="month-year-item flex" *ngIf="showMainView === 3">
-        <span class="item" *ngFor="let item of monthArr" (click)="changeMonth(item)">{{item}}月</span>
+      <span
+        class="item"
+        *ngFor="let item of monthArr"
+        (click)="changeYearMonth(item, 'month')"
+        >{{ item }}月</span
+      >
     </div>
     <div class="month-year-item flex" *ngIf="showMainView === 2">
-        <span class="item" *ngFor="let item of yearAreaArr" (click)="changeYear(item)">
-            {{item}}年
-        </span>
+      <span
+        class="item"
+        *ngFor="let item of yearAreaArr"
+        (click)="changeYearMonth(item, 'year')"
+      >
+        {{ item }}年
+      </span>
     </div>
-    </div>
+  </div>
 </div>
