@@ -8,7 +8,7 @@ import { dateFade } from './fade';
 })
 export class TimePickerComponent implements OnInit {
   @Input() timeValue = '';
-  @Output() changeTimeEmit = new EventEmitter();
+  @Output() timeValueChange = new EventEmitter();
   showTimer = false;
   hourArr: any[] = [];
   timesArr: any[] = [];
@@ -28,12 +28,10 @@ export class TimePickerComponent implements OnInit {
     this.hour = this.timeValue.substr(0, 2);
     this.minute = this.timeValue.substr(3, 2);
     this.second = this.timeValue.substr(6, 2);
-    console.log('aaaaaaaa');
   }
 
   ngAfterViewInit() {
     const item = document.getElementById('item015');
-    console.log(item);
   }
 
   initShowArr(type, number) {
@@ -59,7 +57,7 @@ export class TimePickerComponent implements OnInit {
     this[this.typeArr[type]] = num;
     this.defaultFormt();
     this.upDateTimeValue();
-    this.changeTimeEmit.emit(this.timeValue);
+    this.timeValueChange.emit(this.timeValue);
   }
 
   clear() {
@@ -67,17 +65,35 @@ export class TimePickerComponent implements OnInit {
     this.minute = '';
     this.second = '';
     this.timeValue = '';
+    this.showClear = false;
+    this.timeValueChange.emit(this.timeValue);
   }
 
-  mouseEnter() {}
+  mouse(bool) {
+    if (!this.timeValue && bool) {
+      this.showClear = !bool;
+      return;
+    }
+    this.showClear = bool;
+  }
+
+  getNowTime() {
+    const nowTime = new Date().toTimeString();
+    this.hour = nowTime.substr(0, 2);
+    this.minute = nowTime.substr(3, 2);
+    this.second = nowTime.substr(6, 2);
+    this.timeValue = nowTime.substr(0, 8);
+    this.showTimer = false;
+    this.timeValueChange.emit(this.timeValue);
+  }
 
   open() {
     this.showTimer = true;
-    setTimeout(() => {
-      const item = document.getElementById('item015');
-      console.log(item, item.offsetTop);
-      document.getElementById('item0').style.top = -100 + 'px';
-    }, 500);
+    // setTimeout(() => {
+    //   const item = document.getElementById('item015');
+    //   console.log(item, item.offsetTop);
+    //   document.getElementById('item0').style.top = -100 + 'px';
+    // }, 500);
   }
 
   close() {

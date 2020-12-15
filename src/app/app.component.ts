@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular2-R-ui';
   dateValue = '';
+  timeValue = '';
   menuList = [
     '天空很蓝天空很蓝',
     '大地很方大地很方',
@@ -21,5 +22,11 @@ export class AppComponent {
 
   star(value) {
     alert(value + '星');
+  }
+
+  ngOnInit() {}
+
+  aa() {
+    console.log(this.dateValue);
   }
 }

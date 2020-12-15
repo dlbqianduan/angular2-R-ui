@@ -38,12 +38,13 @@
   </div>
   <br />
   <div class="date-picker">
-    <R-date-picker [dateValue]="dateValue"></R-date-picker>
+    <R-date-picker [(dateValue)]="dateValue"></R-date-picker>
   </div>
   <br />
   <div class="time-picker">
-    <R-time-picker [timeValue]="'15:15:20'"></R-time-picker>
+    <R-time-picker [(timeValue)]="timeValue"></R-time-picker>
   </div>
-
+  <br />
+  <!-- <div class="hh" (click)="aa()">点击</div> -->
   <router-outlet></router-outlet>
 </div>

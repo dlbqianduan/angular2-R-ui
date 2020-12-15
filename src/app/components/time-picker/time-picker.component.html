@@ -4,10 +4,15 @@
     <i
       *ngIf="!showClear"
       class="calendar-icon"
-      (click)="clear()"
-      (mouseenter)="mouseEnter()"
+      (click)="open()"
+      (mouseenter)="mouse(true)"
     ></i>
-    <i *ngIf="showClear" class="calendar-icon clear" (click)="clear()"></i>
+    <i
+      *ngIf="showClear"
+      class="calendar-icon clear"
+      (click)="clear()"
+      (mouseleave)="mouse(false)"
+    ></i>
   </div>
   <div
     *ngIf="showTimer"
@@ -47,7 +52,7 @@
       </ul>
     </div>
     <div class="btn flex">
-      <button class="cancel" (click)="close()">当前时间</button
+      <button class="cancel" (click)="getNowTime()">当前时间</button
       ><button class="confirm" (click)="close()">确认</button>
     </div>
   </div>

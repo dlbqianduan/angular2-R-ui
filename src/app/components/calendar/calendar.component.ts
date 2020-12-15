@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CalendarComponent implements OnInit {
   @Input() dateValue: string;
-  @Output() chooseDateEmit: EventEmitter<any> = new EventEmitter();
+  @Output() dateValueChange: EventEmitter<any> = new EventEmitter();
   week = ['一', '二', '三', '四', '五', '六', '日'];
   monthArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   year: number;
@@ -60,7 +60,7 @@ export class CalendarComponent implements OnInit {
         (this.month > 9 ? this.month : '0' + this.month) +
         '-' +
         (this.day > 9 ? this.day : '0' + this.day);
-      this.chooseDateEmit.emit(this.dateValue);
+      this.dateValueChange.emit(this.dateValue);
     }
   }
 

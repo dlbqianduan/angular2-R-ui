@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from 'protractor';
 import { dateFade } from './dateFade';
 
 @Component({
@@ -9,6 +10,7 @@ import { dateFade } from './dateFade';
 })
 export class DatePickerComponent implements OnInit {
   @Input() dateValue: string;
+  // @Output() dateValueChange = new EventEmitter();
   showCalendar = false;
   constructor() {}
 
@@ -18,7 +20,8 @@ export class DatePickerComponent implements OnInit {
     this.showCalendar = !this.showCalendar;
   }
   close(e) {
-    this.showCalendar = false;
     this.dateValue = e;
+    this.showCalendar = false;
+    // this.dateValueChange.emit(this.dateValue);
   }
 }
