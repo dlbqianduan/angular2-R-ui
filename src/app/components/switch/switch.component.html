@@ -1,0 +1,10 @@
+<div class="switch-container">
+  <button class="btn flex" [class.gray]="!selected" (click)="switch()">
+    <span class="con" [class.selected]="selected">{{
+      selected ? "开启" : "关闭"
+    }}</span
+    ><span class="after" [class.selected]="selected"></span>
+    <!-- 外光圈 -->
+    <div *ngIf="clickLight" [@switchFade]="'bottom'" class="light"></div>
+  </button>
+</div>

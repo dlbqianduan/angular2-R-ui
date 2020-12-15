@@ -14,6 +14,7 @@ import { RateComponent } from './components/rate/rate.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
 import { TimePickerComponent } from './components/time-picker/time-picker.component';
+import { SwitchComponent } from './components/switch/switch.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { TimePickerComponent } from './components/time-picker/time-picker.compon
     CalendarComponent,
     DatePickerComponent,
     TimePickerComponent,
+    SwitchComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

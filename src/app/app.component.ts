@@ -19,6 +19,7 @@ export class AppComponent {
     '白云很白白云很白',
     '小草很路小草很路',
   ];
+  selected = false;
 
   star(value) {
     alert(value + '星');
@@ -27,6 +28,6 @@ export class AppComponent {
   ngOnInit() {}
 
   aa() {
-    console.log(this.dateValue);
+    console.log(this.selected);
   }
 }
