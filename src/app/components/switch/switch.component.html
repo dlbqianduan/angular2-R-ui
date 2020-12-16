@@ -4,7 +4,7 @@
       selected ? "开启" : "关闭"
     }}</span
     ><span class="after" [class.selected]="selected"></span>
-    <!-- 外光圈 -->
-    <div *ngIf="clickLight" [@switchFade]="'bottom'" class="light"></div>
   </button>
+  <!-- 外光圈 -->
+  <div class="light" *ngIf="clickLight" (click)="switch()"></div>
 </div>

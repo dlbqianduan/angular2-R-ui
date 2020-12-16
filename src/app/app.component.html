@@ -5,22 +5,15 @@
   <br />
   <div class="pagination">
     <R-pagination
-      [currentPage]="1"
+      [(currentPage)]="currentPage"
       [totalPage]="15"
       paginationType="simple"
       [showInputPage]="true"
     ></R-pagination>
     <br />
     <R-pagination
-      [currentPage]="1"
-      [totalPage]="7"
-      paginationType="usual"
-      [showInputPage]="true"
-    ></R-pagination>
-    <br />
-    <R-pagination
-      [currentPage]="10"
-      [totalPage]="30"
+      [(currentPage)]="currentPage2"
+      [totalPage]="20"
       paginationType="usual"
       [showInputPage]="true"
     ></R-pagination>
@@ -46,7 +39,17 @@
   </div>
   <br />
   <div class="switch">
-    <R-switch [(selected)]="selected"></R-switch>
+    <R-switch
+      [(selected)]="selected"
+      (selectedChange)="switch($event)"
+    ></R-switch>
+  </div>
+  <br />
+  <div class="switch">
+    <R-switch
+      [(selected)]="selected2"
+      (selectedChange)="switch($event)"
+    ></R-switch>
   </div>
   <div class="hh" (click)="aa()">点击</div>
   <router-outlet></router-outlet>

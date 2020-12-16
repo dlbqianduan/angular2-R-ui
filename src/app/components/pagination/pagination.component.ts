@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import {
   Component,
   Input,
@@ -9,7 +8,6 @@ import {
   ElementRef,
   Renderer2,
 } from '@angular/core';
-import { element } from 'protractor';
 
 @Component({
   selector: 'R-pagination',
@@ -99,7 +97,7 @@ export class PaginationComponent implements OnInit {
   @Input() totalPage = 0;
   @Input() paginationType = 'simple';
   @Input() showInputPage = false;
-  @Output() changePageEmit: EventEmitter<any> = new EventEmitter();
+  @Output() currentPageChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('pre') pre: ElementRef;
   @ViewChild('next') next: ElementRef;
   ifchange: boolean = false; //能否切换
@@ -141,7 +139,7 @@ export class PaginationComponent implements OnInit {
       this.updatePageNum();
     }
     //回调
-    this.changePageEmit.emit(this.currentPage);
+    this.currentPageChange.emit(this.currentPage);
   }
 
   ngAfterViewInit() {}
@@ -230,7 +228,7 @@ export class PaginationComponent implements OnInit {
     //清空inputValue
     this.inputValue = null;
     this.updatePageNum();
-    this.changePageEmit.emit(_number);
+    this.currentPageChange.emit(_number);
   }
 
   /**
@@ -248,6 +246,6 @@ export class PaginationComponent implements OnInit {
     }
     this.updatePageNum();
     //回调
-    this.changePageEmit.emit(this.currentPage);
+    this.currentPageChange.emit(this.currentPage);
   }
 }

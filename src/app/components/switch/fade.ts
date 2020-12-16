@@ -11,21 +11,23 @@ export const switchFade: AnimationTriggerMetadata = trigger('switchFade', [
   state(
     'void',
     style({
-      top: '-1px',
-      left: '-1px',
-      right: '-1px',
-      bottom: '-1px',
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '0px',
+      borderWidth: '0px',
     })
   ),
   state(
     'bottom',
     style({
-      top: '-5px',
-      left: '-5px',
-      right: '-5px',
-      bottom: '-5px',
+      top: '-4px',
+      left: '-4px',
+      right: '-4px',
+      bottom: '-4px',
+      borderWidth: '4px',
     })
   ),
-  transition('void => bottom', [animate('500ms cubic-bezier(.08,.82,.17,1)')]),
-  transition('bottom => void', [animate('500ms cubic-bezier(.08,.82,.17,1)')]),
+  transition('void => bottom', [animate('200ms cubic-bezier(.08,.82,.17,1)')]),
+  transition('bottom => void', [animate('200ms cubic-bezier(.08,.82,.17,1)')]),
 ]);
