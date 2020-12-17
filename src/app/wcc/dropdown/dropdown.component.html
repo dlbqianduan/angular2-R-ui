@@ -1,3 +1,52 @@
 <div class="dropDown">
-  <R-drop-down [menuList]="menuList"></R-drop-down>
+  <R-fix-box>
+    <div class="box-wrap flex">
+      <a href="/dropDown#component">组件</a><a href="/dropDown#api">API</a>
+    </div>
+  </R-fix-box>
+  <div class="component" id="component" style="padding-top: 50px">
+    <p class="tit">点击触发</p>
+    <div class="comp">
+      <R-drop-down
+        [menuList]="menuList"
+        [trigger]="'click'"
+        (menuItemChange)="doSome($event)"
+      ></R-drop-down>
+    </div>
+    <br />
+    <p class="tit">hover触发</p>
+    <div class="comp">
+      <R-drop-down
+        [menuList]="menuList"
+        [trigger]="'hover'"
+        (menuItemChange)="doSome($event)"
+      ></R-drop-down>
+    </div>
+  </div>
+  <div class="api" id="api">
+    <table>
+      <thead>
+        <tr>
+          <th>参数</th>
+          <th>作用</th>
+          <th>类型</th>
+          <th>可取值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>menuList</td>
+          <td>菜单列表</td>
+          <td>array</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>menuItemChange</td>
+          <td>回调事件</td>
+          <td>EventEmitter</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -19,4 +19,8 @@ export class DropdownComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  doSome(e) {
+    alert(e);
+  }
 }

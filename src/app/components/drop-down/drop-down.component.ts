@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'R-drop-down',
-  template: ` <div rDropDownD [dropMenu]="menu" rTrigger="click">
+  template: ` <div rDropDownD [dropMenu]="menu" [rTrigger]="trigger">
     <span class="rDropDownD">{{ buttonName }}</span>
     <R-dropdownmenu #menu>
       <ul class="menu-wrap">
@@ -21,6 +21,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DropDownComponent implements OnInit {
   @Input() menuList: any[] = [];
+  @Input() trigger: 'hover' | 'click' = 'hover';
+  @Output() menuItemChange = new EventEmitter();
   buttonName = '下拉菜单';
   itemList: any[] = [];
   constructor() {}
@@ -34,5 +36,6 @@ export class DropDownComponent implements OnInit {
   //自定义
   itemClick(item) {
     this.buttonName = item;
+    this.menuItemChange.emit(item);
   }
 }

@@ -1,6 +1,45 @@
 <div class="switch">
-  <R-switch
-    [(selected)]="selected"
-    (selectedChange)="switch($event)"
-  ></R-switch>
+  <p class="tit">开关</p>
+  <br />
+  <div>
+    <R-switch
+      [(selected)]="selected"
+      (selectedChange)="switch($event)"
+    ></R-switch>
+  </div>
+
+  <br />
+  <div>
+    <R-switch
+      [(selected)]="selected2"
+      (selectedChange)="switch($event)"
+    ></R-switch>
+  </div>
+
+  <div class="api" id="api">
+    <table>
+      <thead>
+        <tr>
+          <th>参数</th>
+          <th>作用</th>
+          <th>类型</th>
+          <th>可取值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[(selected)]</td>
+          <td>开关状态(双向绑定)</td>
+          <td>boolean</td>
+          <td>true&nbsp;;&nbsp;|&nbsp;&nbsp;false</td>
+        </tr>
+        <tr>
+          <td>(selectedChange)</td>
+          <td>回调事件</td>
+          <td>EventEmitter</td>
+          <td>无</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

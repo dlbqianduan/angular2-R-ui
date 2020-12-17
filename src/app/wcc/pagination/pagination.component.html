@@ -1,6 +1,76 @@
-<R-pagination
-  [(currentPage)]="currentPage"
-  [totalPage]="15"
-  paginationType="simple"
-  [showInputPage]="true"
-></R-pagination>
+<div class="pagination">
+  <R-fix-box>
+    <div class="box-wrap flex">
+      <a href="/pagination#component">组件</a><a href="/pagination#api">API</a>
+    </div>
+  </R-fix-box>
+  <p class="tit">简单分页</p>
+  <R-pagination
+    [(currentPage)]="currentPage1"
+    [totalPage]="7"
+    paginationType="simple"
+    [showInputPage]="true"
+  ></R-pagination>
+  <br />
+  <br />
+  <p class="tit">通用分页</p>
+  <R-pagination
+    [(currentPage)]="currentPage2"
+    [totalPage]="7"
+    paginationType="usual"
+    [showInputPage]="false"
+  ></R-pagination>
+  <br />
+  <br />
+  <p class="tit">可跳转分页</p>
+  <R-pagination
+    [(currentPage)]="currentPage3"
+    [totalPage]="20"
+    paginationType="usual"
+    [showInputPage]="true"
+  ></R-pagination>
+  <div class="api" id="api">
+    <table>
+      <thead>
+        <tr>
+          <th>参数</th>
+          <th>作用</th>
+          <th>类型</th>
+          <th>可取值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[(currentPage)]</td>
+          <td>当前页(双向绑定)</td>
+          <td>number</td>
+          <td>小于等于totalPage参数</td>
+        </tr>
+        <tr>
+          <td>totalPage</td>
+          <td>总页数</td>
+          <td>number</td>
+          <td>任何整数</td>
+        </tr>
+        <tr>
+          <td>paginationType</td>
+          <td>分页类型</td>
+          <td>string</td>
+          <td>'simple'(默认)&nbsp;&nbsp;|&nbsp;&nbsp;'usual'</td>
+        </tr>
+        <tr>
+          <td>showInputPage</td>
+          <td>展示输入跳转框</td>
+          <td>boolean</td>
+          <td>'false'(默认)&nbsp;&nbsp;|&nbsp;&nbsp;'true'</td>
+        </tr>
+        <tr>
+          <td>(currentPageChange)</td>
+          <td>回调事件</td>
+          <td>EventEmitter</td>
+          <td>无</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

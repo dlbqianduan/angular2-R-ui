@@ -5,7 +5,7 @@ import { WccComponent } from './wcc/wcc/wcc.component';
 const routes: Routes = [
   {
     path: '',
-    component: WccComponent,
+    // component: WccComponent,
     loadChildren: () => import('./wcc/wcc.module').then((m) => m.WccModule),
   },
 ];

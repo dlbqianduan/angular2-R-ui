@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rate.component.less'],
 })
 export class RateComponentP implements OnInit {
+  currentScore1 = 1.5;
+  currentScore2 = 5;
+  totalScore1 = 5;
+  totalScore2 = 6;
   constructor() {}
 
   ngOnInit(): void {}

@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagination.component.less'],
 })
 export class PaginationComponentP implements OnInit {
-  currentPage = 1;
+  currentPage1 = 1;
+  currentPage2 = 7;
+  currentPage3 = 15;
   constructor() {}
 
   ngOnInit(): void {}

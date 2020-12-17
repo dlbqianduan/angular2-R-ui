@@ -22,6 +22,8 @@ import { PaginationComponentP } from './pagination/pagination.component';
 import { RateComponentP } from './rate/rate.component';
 import { SwitchComponentP } from './switch/switch.component';
 import { TimePickerComponentP } from './time-picker/time-picker.component';
+
+import { FixBoxComponent } from '../components/usual/fix-box/fix-box.component';
 @NgModule({
   declarations: [
     DropdownmenuComponent,
@@ -44,6 +46,7 @@ import { TimePickerComponentP } from './time-picker/time-picker.component';
     RateComponentP,
     SwitchComponentP,
     TimePickerComponentP,
+    FixBoxComponent,
   ],
   imports: [CommonModule, WccRoutingModule],
 })

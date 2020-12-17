@@ -1,6 +1,55 @@
-<R-rate
-  [currentScore]="4.5"
-  [totalScore]="6"
-  (starEmit)="star($event)"
-></R-rate>
-<div></div>
+<div class="rate">
+  <R-fix-box>
+    <div class="box-wrap flex">
+      <a href="/dropDown#component">组件</a><a href="/dropDown#api">API</a>
+    </div>
+  </R-fix-box>
+  <p class="tit">评分只读</p>
+  <R-rate
+    [onlyRead]="true"
+    [currentScore]="currentScore1"
+    [totalScore]="totalScore1"
+    (starEmit)="star($event)"
+  ></R-rate>
+  <br />
+  <br />
+  <p class="tit">评分可读可写</p>
+  <R-rate
+    [onlyRead]="false"
+    [currentScore]="currentScore2"
+    [totalScore]="totalScore2"
+    (starEmit)="star($event)"
+  ></R-rate>
+  <div class="api" id="api">
+    <table>
+      <thead>
+        <tr>
+          <th>参数</th>
+          <th>作用</th>
+          <th>类型</th>
+          <th>可取值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>onlyRead</td>
+          <td>是否只读</td>
+          <td>boolean</td>
+          <td>true&nbsp;&nbsp;|&nbsp;&nbsp;false</td>
+        </tr>
+        <tr>
+          <td>currentScore</td>
+          <td>总分</td>
+          <td>number</td>
+          <td>任何整数</td>
+        </tr>
+        <tr>
+          <td>(starEmit)</td>
+          <td>回调事件</td>
+          <td>EventEmitter</td>
+          <td>无</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
