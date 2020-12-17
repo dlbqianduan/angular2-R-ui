@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./loading.component.less'],
 })
 export class LoadingComponent implements OnInit {
-  @Input() type: 'circle' | 'simple';
+  @Input() type: 'circle' | 'simple' | 'line' | 'much' | 'music';
   constructor() {}
 
   ngOnInit(): void {}
