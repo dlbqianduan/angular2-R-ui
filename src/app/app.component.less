@@ -1,4 +1,44 @@
 .appcontainer {
+  .left-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-right: 1px solid #555;
+    &:hover {
+      overflow-y: scroll;
+    }
+    .item {
+      display: block;
+      padding: 10px 20px;
+      letter-spacing: 1px;
+      margin: 10px 0;
+      &.active {
+        box-shadow: inset 0 0 10px rgb(225, 132, 253);
+        background: linear-gradient(
+          to right,
+          rgb(183, 20, 233),
+          rgb(240, 20, 20)
+        );
+      }
+      &:hover {
+        box-shadow: inset 0 0 10px rgb(225, 132, 253);
+        background: linear-gradient(
+          to right,
+          rgb(183, 20, 233),
+          rgb(240, 20, 20)
+        );
+      }
+    }
+  }
+  .middle-content {
+    width: 300px;
+    margin: 0 auto;
+  }
   padding: 20px;
   .dropDown {
     cursor: pointer;

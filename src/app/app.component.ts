@@ -6,6 +6,41 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
+  path = '';
+  routerArr = [
+    {
+      name: '下拉菜单 dropDown',
+      path: '/dropDown',
+    },
+    {
+      name: '分页 pagination',
+      path: '/pagination',
+    },
+    {
+      name: '评分 rate',
+      path: '/rate',
+    },
+    {
+      name: '日历 calendar',
+      path: '/calendar',
+    },
+    {
+      name: '日期选择 date-picker',
+      path: '/datePicker',
+    },
+    {
+      name: '时间选择 time-picker',
+      path: '/timePicker',
+    },
+    {
+      name: '开关 switch',
+      path: '/switch',
+    },
+    {
+      name: '加载动画 loading',
+      path: '/loading',
+    },
+  ];
   title = 'angular2-R-ui';
   dateValue = '';
   timeValue = '';
@@ -26,6 +61,12 @@ export class AppComponent {
 
   star(value) {
     alert(value + '星');
+  }
+
+  constructor() {
+    const path = location.href;
+    this.path = path;
+    console.log(this.path);
   }
 
   ngOnInit() {}

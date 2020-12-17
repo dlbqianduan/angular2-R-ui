@@ -1,56 +1,71 @@
 <div class="appcontainer">
-  <div class="dropDown">
-    <R-drop-down [menuList]="menuList"></R-drop-down>
+  <div class="left-menu">
+    <a
+      class="item"
+      *ngFor="let item of routerArr"
+      [routerLink]="item.path"
+      routerLinkActive="active"
+      >{{ item.name }}</a
+    >
   </div>
-  <br />
-  <div class="pagination">
-    <R-pagination
-      [(currentPage)]="currentPage"
-      [totalPage]="15"
-      paginationType="simple"
-      [showInputPage]="true"
-    ></R-pagination>
+  <div class="middle-content">
+    <!-- <div class="dropDown">
+      <R-drop-down [menuList]="menuList"></R-drop-down>
+    </div>
     <br />
-    <R-pagination
-      [(currentPage)]="currentPage2"
-      [totalPage]="20"
-      paginationType="usual"
-      [showInputPage]="true"
-    ></R-pagination>
+    <div class="pagination">
+      <R-pagination
+        [(currentPage)]="currentPage"
+        [totalPage]="15"
+        paginationType="simple"
+        [showInputPage]="true"
+      ></R-pagination>
+      <br />
+      <R-pagination
+        [(currentPage)]="currentPage2"
+        [totalPage]="20"
+        paginationType="usual"
+        [showInputPage]="true"
+      ></R-pagination>
+      <br />
+      <R-rate
+        [currentScore]="4.5"
+        [totalScore]="6"
+        (starEmit)="star($event)"
+      ></R-rate>
+    </div>
     <br />
-    <R-rate
-      [onlyRead]="false"
-      [currentScore]="4.5"
-      [totalScore]="6"
-      (starEmit)="star($event)"
-    ></R-rate>
+    <div class="calendar">
+      <R-calendar></R-calendar>
+    </div>
+    <br />
+    <div class="date-picker">
+      <R-date-picker [(dateValue)]="dateValue"></R-date-picker>
+    </div>
+    <br />
+    <div class="time-picker">
+      <R-time-picker [(timeValue)]="timeValue"></R-time-picker>
+    </div>
+    <br />
+    <div class="switch">
+      <R-switch
+        [(selected)]="selected"
+        (selectedChange)="switch($event)"
+      ></R-switch>
+    </div>
+    <br />
+    <div class="switch">
+      <R-switch
+        [(selected)]="selected2"
+        (selectedChange)="switch($event)"
+      ></R-switch>
+    </div>
+    <br />
+    <div class="loading">
+      <R-loading type="simple"></R-loading>
+    </div>
+    <br />
+    <div class="hh" (click)="aa()">点击</div> -->
+    <router-outlet></router-outlet>
   </div>
-  <br />
-  <div class="calendar">
-    <R-calendar></R-calendar>
-  </div>
-  <br />
-  <div class="date-picker">
-    <R-date-picker [(dateValue)]="dateValue"></R-date-picker>
-  </div>
-  <br />
-  <div class="time-picker">
-    <R-time-picker [(timeValue)]="timeValue"></R-time-picker>
-  </div>
-  <br />
-  <div class="switch">
-    <R-switch
-      [(selected)]="selected"
-      (selectedChange)="switch($event)"
-    ></R-switch>
-  </div>
-  <br />
-  <div class="switch">
-    <R-switch
-      [(selected)]="selected2"
-      (selectedChange)="switch($event)"
-    ></R-switch>
-  </div>
-  <div class="hh" (click)="aa()">点击</div>
-  <router-outlet></router-outlet>
 </div>

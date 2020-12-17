@@ -53,6 +53,6 @@ export class DropDownDDirective {
     });
   }
   ngOnDestroy() {
-    this.triggerState$.unsubscribe();
+    // this.triggerState$.unsubscribe();
   }
 }
