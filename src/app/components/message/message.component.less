@@ -1,0 +1,29 @@
+.message-container {
+  font-size: 12px;
+  width: 200px;
+  padding: 8px 10px;
+  color: rgb(245, 68, 68);
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 0 8px rgb(245, 68, 68);
+  .con {
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .icon {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-right: 5px;
+      &.error-icon {
+        background-image: url("../../../assets/img/err.png");
+      }
+      &.correct-icon {
+        background-image: url("../../../assets/img/correct.png");
+      }
+    }
+  }
+}

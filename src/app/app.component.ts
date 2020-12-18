@@ -44,6 +44,10 @@ export class AppComponent {
       name: '加载动画 loading',
       path: '/loading',
     },
+    {
+      name: '全局信息通知 message',
+      path: '/message',
+    },
   ];
   title = 'angular2-R-ui';
   dateValue = '';

@@ -8,6 +8,7 @@ import { PaginationComponentP } from './pagination/pagination.component';
 import { RateComponentP } from './rate/rate.component';
 import { SwitchComponentP } from './switch/switch.component';
 import { TimePickerComponentP } from './time-picker/time-picker.component';
+import { MessageComponentP } from './message/message.component';
 const routes: Routes = [
   {
     path: 'dropDown',
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'loading',
     component: LoadingComponentP,
+  },
+  {
+    path: 'message',
+    component: MessageComponentP,
   },
 ];
 
