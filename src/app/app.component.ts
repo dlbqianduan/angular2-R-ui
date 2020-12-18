@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-
+import { enableProdMode } from '@angular/core';
+import { fromEvent } from 'rxjs';
+enableProdMode();
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
+  showMenuss = true;
+  resize$: any;
   path = '';
   routerArr = [
     {
@@ -66,10 +70,17 @@ export class AppComponent {
   constructor() {
     const path = location.href;
     this.path = path;
-    console.log(this.path);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.resize$ = fromEvent(window, 'resize');
+    this.closeMenu();
+    this.resize$.subscribe(() => {
+      this.closeMenu();
+    });
+  }
+
+  ngAfterViewInit() {}
 
   aa() {
     console.log(this.currentPage, this.currentPage2);
@@ -77,5 +88,14 @@ export class AppComponent {
 
   switch(e) {
     console.log('我' + e);
+  }
+
+  closeMenu() {
+    const that = this;
+    if (window.innerWidth <= 1100) {
+      that.showMenuss = false;
+    } else {
+      that.showMenuss = true;
+    }
   }
 }
