@@ -1,7 +1,15 @@
-<div class="message-container">
+<div
+  class="message-container"
+  [ngClass]="{
+    error: config.type == 'error',
+    warn: config.type == 'warn',
+    success: config.type == 'success'
+  }"
+>
   <div class="con">
-    <span class="icon error-icon"></span>
-    <!-- <span class="icon correct-icon"></span> -->
-    <span>这是一个通知！</span>
+    <span *ngIf="config.type == 'error'" class="icon error-icon"></span>
+    <span *ngIf="config.type == 'warn'" class="icon error-icon"></span>
+    <span *ngIf="config.type == 'success'" class="icon correct-icon"></span>
+    <span>{{ config.message }}</span>
   </div>
 </div>

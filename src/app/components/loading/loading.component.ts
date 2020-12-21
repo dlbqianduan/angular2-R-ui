@@ -13,7 +13,8 @@ export class LoadingComponent implements OnInit {
     | 'much'
     | 'music'
     | 'swing'
-    | 'square';
+    | 'square'
+    | 'charge';
   constructor() {}
 
   ngOnInit(): void {}

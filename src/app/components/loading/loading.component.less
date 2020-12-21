@@ -210,6 +210,24 @@
       }
     }
   }
+  .charge-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #444;
+    .charge {
+      position: absolute;
+      bottom: -100%;
+      left: -50%;
+      width: 180%;
+      height: 180%;
+      background-color: rgb(183, 20, 233);
+      border-radius: 50% 100%;
+      animation: chargeMove 4.5s linear infinite;
+    }
+  }
 }
 @keyframes rotate {
   0% {
@@ -276,5 +294,15 @@
   }
   100% {
     transform: rotate(-360deg);
+  }
+}
+@keyframes chargeMove {
+  0% {
+    bottom: -180%;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: -50%;
+    transform: rotate(180deg);
   }
 }
