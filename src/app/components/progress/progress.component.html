@@ -1,0 +1,17 @@
+<div class="progress-container">
+  <div class="line" *ngIf="type === 'line'">
+    <div
+      class="line-inner"
+      [ngStyle]="{ width: rate + '%' }"
+      (mousedown)="mouseDown($event)"
+      (mousemove)="mouseMove($event)"
+      (mouseup)="mouseUp($event)"
+    >
+      <div
+        *ngIf="ifOperate"
+        class="operate"
+        [ngStyle]="{ right: moveDistance + 'px' }"
+      ></div>
+    </div>
+  </div>
+</div>

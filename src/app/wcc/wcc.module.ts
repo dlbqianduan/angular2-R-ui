@@ -14,6 +14,7 @@ import { SwitchComponent } from '../components/switch/switch.component';
 import { TimePickerComponent } from '../components/time-picker/time-picker.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { MessageComponent } from '../components/message/message.component';
+import { ProgressComponent } from '../components/progress/progress.component';
 
 import { WccComponent } from './wcc/wcc.component';
 import { CalendarComponentP } from './calendar/calendar.component';
@@ -24,6 +25,7 @@ import { RateComponentP } from './rate/rate.component';
 import { SwitchComponentP } from './switch/switch.component';
 import { TimePickerComponentP } from './time-picker/time-picker.component';
 import { MessageComponentP } from './message/message.component';
+import { ProgressComponentP } from './progress/progress.component';
 
 import { FixBoxComponent } from '../components/usual/fix-box/fix-box.component';
 @NgModule({
@@ -40,7 +42,9 @@ import { FixBoxComponent } from '../components/usual/fix-box/fix-box.component';
     SwitchComponent,
     TimePickerComponent,
     DropdownComponent,
+    MessageComponent,
     WccComponent,
+    ProgressComponent,
     CalendarComponentP,
     DatePickerComponentP,
     LoadingComponentP,
@@ -48,8 +52,8 @@ import { FixBoxComponent } from '../components/usual/fix-box/fix-box.component';
     RateComponentP,
     SwitchComponentP,
     TimePickerComponentP,
-    MessageComponent,
     MessageComponentP,
+    ProgressComponentP,
     FixBoxComponent,
   ],
   imports: [CommonModule, WccRoutingModule],

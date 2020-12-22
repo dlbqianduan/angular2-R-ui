@@ -48,6 +48,10 @@ export class AppComponent {
       name: '全局信息通知 message',
       path: '/message',
     },
+    {
+      name: '进度条 progress',
+      path: '/progress',
+    },
   ];
   title = 'angular2-R-ui';
   dateValue = '';

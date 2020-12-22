@@ -9,6 +9,7 @@ import { RateComponentP } from './rate/rate.component';
 import { SwitchComponentP } from './switch/switch.component';
 import { TimePickerComponentP } from './time-picker/time-picker.component';
 import { MessageComponentP } from './message/message.component';
+import { ProgressComponentP } from './progress/progress.component';
 const routes: Routes = [
   {
     path: 'dropDown',
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'message',
     component: MessageComponentP,
+  },
+  {
+    path: 'progress',
+    component: ProgressComponentP,
   },
 ];
 
