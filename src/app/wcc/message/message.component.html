@@ -1,3 +1,51 @@
 <div class="message">
-  <div class="" (click)="notice()">点击message</div>
+  <p class="tit">正确提示</p>
+  <div class="message-btn right" (click)="notice('success')">点击message</div>
+  <br />
+  <p class="tit">错误提示</p>
+  <div class="message-btn error" (click)="notice('error')">点击message</div>
+  <br />
+  <p class="tit">警示提示</p>
+  <div class="message-btn warn" (click)="notice('warn')">点击message</div>
+  <br />
+  <div class="api" id="api">
+    <table>
+      <thead>
+        <tr>
+          <th>参数</th>
+          <th>作用</th>
+          <th>类型</th>
+          <th>可取值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>type</td>
+          <td>提示类型</td>
+          <td>string</td>
+          <td>
+            'success'&nbsp;&nbsp;|&nbsp;&nbsp;'error'&nbsp;&nbsp;|&nbsp;&nbsp;'warn'|&nbsp;&nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>message</td>
+          <td>提示文本</td>
+          <td>string</td>
+          <td>文本</td>
+        </tr>
+        <tr>
+          <td>duration</td>
+          <td>提示关闭时长</td>
+          <td>number</td>
+          <td>数字</td>
+        </tr>
+        <tr>
+          <td>callBack</td>
+          <td>回调函数</td>
+          <td>function</td>
+          <td>function</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

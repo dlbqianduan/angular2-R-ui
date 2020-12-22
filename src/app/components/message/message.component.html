@@ -1,4 +1,5 @@
 <div
+  [@messFade]="showMessBox ? 'bottom' : 'void'"
   class="message-container"
   [ngClass]="{
     error: config.type == 'error',
@@ -8,7 +9,7 @@
 >
   <div class="con">
     <span *ngIf="config.type == 'error'" class="icon error-icon"></span>
-    <span *ngIf="config.type == 'warn'" class="icon error-icon"></span>
+    <span *ngIf="config.type == 'warn'" class="icon warn-icon"></span>
     <span *ngIf="config.type == 'success'" class="icon correct-icon"></span>
     <span>{{ config.message }}</span>
   </div>

@@ -1,25 +1,19 @@
 .message-container {
-  position: fixed;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 12px;
   max-width: 500px;
   padding: 8px 10px;
+  margin: 0 auto 20px;
   border-radius: 5px;
   background: #fff;
   z-index: 1000;
   &.error {
     color: rgb(245, 68, 68);
-    box-shadow: 0 0 8px rgb(245, 68, 68);
   }
   &.warn {
     color: rgb(240, 191, 29);
-    box-shadow: 0 0 8px rgb(240, 191, 29);
   }
   &.success {
     color: #565656;
-    box-shadow: 0 0 8px rgb(24, 236, 95);
   }
   .con {
     span {
@@ -35,6 +29,9 @@
       margin-right: 5px;
       &.error-icon {
         background-image: url("../../../assets/img/err.png");
+      }
+      &.warn-icon {
+        background-image: url("../../../assets/img/warn.png");
       }
       &.correct-icon {
         background-image: url("../../../assets/img/correct.png");

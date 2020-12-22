@@ -11,12 +11,16 @@ export class MessageComponentP implements OnInit {
 
   ngOnInit(): void {}
 
-  notice() {
-    this.mess.createMessage({
-      type: 'success',
-      message:
-        '哈哈哈，我来了哈哈哈，我来了哈哈哈，我来了哈哈哈，我来了哈哈哈，我来了',
-      duration: 300000,
+  notice(type) {
+    this.mess.message({
+      type: type,
+      message: '哈哈哈，我i了' + Math.random(),
+      duration: 3000,
+      callBack: this.dd,
     });
+  }
+
+  dd() {
+    console.log('woliale');
   }
 }
