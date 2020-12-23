@@ -52,6 +52,10 @@ export class AppComponent {
       name: '进度条 progress',
       path: '/progress',
     },
+    {
+      name: 'Tabs 标签页',
+      path: '/tabs',
+    },
   ];
   title = 'angular2-R-ui';
   dateValue = '';

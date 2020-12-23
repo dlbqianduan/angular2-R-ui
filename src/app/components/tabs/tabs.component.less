@@ -1,0 +1,19 @@
+.tabs-wrap {
+  position: relative;
+  justify-content: flex-start;
+  border-bottom: 1px solid #666;
+  .tabs {
+    padding: 6px 0 10px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .active {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(to right, #b714e9, #f01414);
+    transition: all 0.3s;
+  }
+}
