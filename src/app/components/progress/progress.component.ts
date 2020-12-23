@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'R-progress',
@@ -9,31 +9,17 @@ export class ProgressComponent implements OnInit {
   @Input() type: 'line' | 'circle' = 'line';
   @Input() rate = 0;
   @Input() ifOperate = false;
-  start_x: any;
-  moveDistance = 0;
-  switch = false;
-  up_x: any;
+  @Output() rateChange = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
 
-  mouseDown(e) {
-    this.switch = true;
-    const start_x = e.pageX;
-    this.start_x = start_x;
-  }
-
-  mouseMove(e) {
-    if (!this.switch) return;
-    const move_x = e.pageX;
-    const de = this.start_x - move_x;
-    this.moveDistance = this.up_x ? this.up_x - move_x : de;
-  }
-
-  mouseUp(e) {
-    const up_x = e.pageX;
-    const de = up_x - this.start_x;
-    this.up_x = up_x;
-    this.switch = false;
+  operate(type) {
+    if (!type) {
+      this.rate = this.rate - 10 > 0 ? this.rate - 10 : 0;
+    } else {
+      this.rate = this.rate + 10 <= 100 ? this.rate + 10 : 100;
+    }
+    this.rateChange.emit(this.rate);
   }
 }

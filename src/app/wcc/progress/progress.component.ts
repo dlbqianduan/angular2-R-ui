@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress.component.less'],
 })
 export class ProgressComponentP implements OnInit {
-  rate = 88;
+  rate = [50, 60, 70];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // setInterval(() => {
+    //   console.log(this.rate);
+    // }, 1000);
+  }
 }
