@@ -1,0 +1,49 @@
+<div class="progress">
+  <p class="tit">line进度条</p>
+  <R-progress type="line" [rate]="rate[0]"></R-progress>
+  <br />
+  <br />
+  <p class="tit">line进度条</p>
+  <R-progress type="line" [rate]="rate[0]" [ifOperate]="true"></R-progress>
+  <br />
+  <br />
+  <p class="tit">circle进度条</p>
+  <R-progress type="circle" [rate]="rate[1]" [ifOperate]="false"></R-progress>
+  <br />
+  <br />
+  <p class="tit">circle进度条</p>
+  <R-progress type="circle" [(rate)]="rate[2]" [ifOperate]="true"></R-progress>
+  <br />
+  <div class="api" id="api">
+    <table>
+      <thead>
+        <tr>
+          <th>参数</th>
+          <th>作用</th>
+          <th>类型</th>
+          <th>可取值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>rate / [(rate)]</td>
+          <td>当前进度(可进行双向数据绑定)</td>
+          <td>number</td>
+          <td>数字</td>
+        </tr>
+        <tr>
+          <td>ifOperate</td>
+          <td>能够操作进度条</td>
+          <td>boolean</td>
+          <td>true | false</td>
+        </tr>
+        <tr>
+          <td>(rateChange)</td>
+          <td>回调事件</td>
+          <td>EventEimitter</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

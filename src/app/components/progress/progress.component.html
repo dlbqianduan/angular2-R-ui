@@ -1,0 +1,42 @@
+<div class="progress-container">
+  <div class="line flex" *ngIf="type === 'line'">
+    <div class="line-inner" [ngStyle]="{ width: rate + '%' }"></div>
+    <div *ngIf="ifOperate" class="operate flex">
+      <div (click)="operate(0)">-</div>
+      <div (click)="operate(1)">+</div>
+    </div>
+  </div>
+  <div class="circle" *ngIf="type === 'circle'">
+    <svg viewBox="0 0 100 100" class="ant-progress-circle">
+      <path
+        stroke="#f3f3f3"
+        fill-opacity="0"
+        class="progress-path"
+        stroke-width="6"
+        d="M 50,50 m 0,-47
+      a 47,47 0 1 1 0,94
+      a 47,47 0 1 1 0,-94"
+        style="stroke-dasharray: 300px, 300px"
+      ></path>
+      <path
+        *ngIf="rate > 0"
+        stroke="#b714e9"
+        fill-opacity="0"
+        class="progress-path"
+        d="M 50,50 m 0,-47
+      a 47,47 0 1 1 0,94
+      a 47,47 0 1 1 0,-94"
+        stroke-linecap="round"
+        stroke-width="6"
+        [ngStyle]="{
+          'stroke-dasharray': (rate / 100) * 300 + 'px, 300px'
+        }"
+      ></path>
+    </svg>
+    <div class="show-rate">{{ rate + "%" }}</div>
+    <div *ngIf="ifOperate" class="operate flex">
+      <div (click)="operate(0)">-</div>
+      <div (click)="operate(1)">+</div>
+    </div>
+  </div>
+</div>

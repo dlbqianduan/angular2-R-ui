@@ -1,0 +1,46 @@
+.line {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 8px;
+  .line-inner {
+    position: relative;
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(to right, #b714e9, #f01414);
+  }
+}
+.circle {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  .progress-path {
+    transition: all 0.5s;
+    stroke-dasharray: 0, 295.31px;
+  }
+  .show-rate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+  }
+}
+.operate {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 30px);
+  transform: translateY(-50%);
+  & > div {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+}

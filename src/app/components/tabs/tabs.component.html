@@ -1,0 +1,9 @@
+<div class="tabs-container">
+  <div class="tabs-wrap flex">
+    <R-tab-nav
+      (tabsChange)="tabsChangeF($event)"
+      *ngIf="tabs.length > 0"
+      [tabs]="tabs"
+    ></R-tab-nav>
+  </div>
+</div>
