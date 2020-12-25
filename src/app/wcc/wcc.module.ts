@@ -17,6 +17,7 @@ import { MessageComponent } from '../components/message/message.component';
 import { ProgressComponent } from '../components/progress/progress.component';
 import { TabsComponent } from '../components/tabs/tabs.component';
 import { TabNavComponent } from '../components/tabs/tab-nav/tab-nav.component';
+import { TableComponent } from '../components/table/table.component';
 
 import { WccComponent } from './wcc/wcc.component';
 import { CalendarComponentP } from './calendar/calendar.component';
@@ -31,6 +32,7 @@ import { ProgressComponentP } from './progress/progress.component';
 
 import { FixBoxComponent } from '../components/usual/fix-box/fix-box.component';
 import { TabsComponentP } from './tabs/tabs.component';
+import { TableComponentP } from './table/table.component';
 @NgModule({
   declarations: [
     DropdownmenuComponent,
@@ -50,6 +52,7 @@ import { TabsComponentP } from './tabs/tabs.component';
     ProgressComponent,
     TabsComponent,
     TabNavComponent,
+    TableComponent,
     CalendarComponentP,
     DatePickerComponentP,
     LoadingComponentP,
@@ -61,6 +64,7 @@ import { TabsComponentP } from './tabs/tabs.component';
     ProgressComponentP,
     FixBoxComponent,
     TabsComponentP,
+    TableComponentP,
   ],
   imports: [CommonModule, WccRoutingModule],
 })

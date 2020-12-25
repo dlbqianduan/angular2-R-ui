@@ -56,6 +56,10 @@ export class AppComponent {
       name: 'Tabs 标签页',
       path: '/tabs',
     },
+    {
+      name: 'table 表格',
+      path: '/table',
+    },
   ];
   title = 'angular2-R-ui';
   dateValue = '';
