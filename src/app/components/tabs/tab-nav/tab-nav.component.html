@@ -1,0 +1,13 @@
+<div class="flex" style="position: relative">
+  <span
+    #allTabs
+    class="tabs"
+    *ngFor="let item of tabs; let ind = index"
+    (click)="tabSelect(ind)"
+    >{{ item }}</span
+  >
+  <div
+    class="active"
+    [ngStyle]="{ width: tabWidth + 'px', left: tabLeft + 'px' }"
+  ></div>
+</div>

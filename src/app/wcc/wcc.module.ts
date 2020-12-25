@@ -16,6 +16,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { MessageComponent } from '../components/message/message.component';
 import { ProgressComponent } from '../components/progress/progress.component';
 import { TabsComponent } from '../components/tabs/tabs.component';
+import { TabNavComponent } from '../components/tabs/tab-nav/tab-nav.component';
 
 import { WccComponent } from './wcc/wcc.component';
 import { CalendarComponentP } from './calendar/calendar.component';
@@ -48,6 +49,7 @@ import { TabsComponentP } from './tabs/tabs.component';
     WccComponent,
     ProgressComponent,
     TabsComponent,
+    TabNavComponent,
     CalendarComponentP,
     DatePickerComponentP,
     LoadingComponentP,

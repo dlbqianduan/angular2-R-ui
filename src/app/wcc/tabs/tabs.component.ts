@@ -18,6 +18,10 @@ export class TabsComponentP implements OnInit {
         '啦啦啦啦啦啦啦',
         '胡粉红粉红的开发和',
       ];
-    }, 1000);
+    }, 100);
+  }
+
+  changeF(e) {
+    console.log(e);
   }
 }

@@ -1,15 +1,9 @@
 <div class="tabs-container">
   <div class="tabs-wrap flex">
-    <span
-      #allTabs
-      class="tabs"
-      *ngFor="let item of tabs; let ind = index"
-      (click)="tabSelect(ind)"
-      >{{ item }}</span
-    >
-    <div
-      class="active"
-      [ngStyle]="{ width: tabWidth + 'px', left: tabLeft + 'px' }"
-    ></div>
+    <R-tab-nav
+      (tabsChange)="tabsChangeF($event)"
+      *ngIf="tabs.length > 0"
+      [tabs]="tabs"
+    ></R-tab-nav>
   </div>
 </div>
