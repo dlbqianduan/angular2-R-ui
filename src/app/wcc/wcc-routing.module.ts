@@ -12,6 +12,7 @@ import { MessageComponentP } from './message/message.component';
 import { ProgressComponentP } from './progress/progress.component';
 import { TabsComponentP } from './tabs/tabs.component';
 import { TableComponentP } from './table/table.component';
+import { StepComponentP } from './step/step.component';
 const routes: Routes = [
   {
     path: 'dropDown',
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'table',
     component: TableComponentP,
+  },
+  {
+    path: 'step',
+    component: StepComponentP,
   },
 ];
 

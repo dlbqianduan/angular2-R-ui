@@ -60,6 +60,10 @@ export class AppComponent {
       name: 'table 表格',
       path: '/table',
     },
+    {
+      name: 'step 步骤条',
+      path: '/step',
+    },
   ];
   title = 'angular2-R-ui';
   dateValue = '';

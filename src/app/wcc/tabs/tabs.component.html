@@ -1,3 +1,29 @@
 <div class="tabs">
   <R-tabs [tabs]="tabs" (tabsChange)="changeF($event)"></R-tabs>
+  <div class="api" id="api">
+    <table>
+      <thead>
+        <tr>
+          <th>参数</th>
+          <th>作用</th>
+          <th>类型</th>
+          <th>可取值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>tabs</td>
+          <td>标签数组</td>
+          <td>array</td>
+          <td>任何数组</td>
+        </tr>
+        <tr>
+          <td>(tabsChange)</td>
+          <td>回调事件</td>
+          <td>EventEmitter</td>
+          <td>回调方法</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

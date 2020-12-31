@@ -18,6 +18,8 @@ import { ProgressComponent } from '../components/progress/progress.component';
 import { TabsComponent } from '../components/tabs/tabs.component';
 import { TabNavComponent } from '../components/tabs/tab-nav/tab-nav.component';
 import { TableComponent } from '../components/table/table.component';
+import { StepComponent } from '../components/step/step.component';
+import { StepItemComponent } from '../components/step/step-item/step-item.component';
 
 import { WccComponent } from './wcc/wcc.component';
 import { CalendarComponentP } from './calendar/calendar.component';
@@ -29,10 +31,11 @@ import { SwitchComponentP } from './switch/switch.component';
 import { TimePickerComponentP } from './time-picker/time-picker.component';
 import { MessageComponentP } from './message/message.component';
 import { ProgressComponentP } from './progress/progress.component';
-
 import { FixBoxComponent } from '../components/usual/fix-box/fix-box.component';
 import { TabsComponentP } from './tabs/tabs.component';
 import { TableComponentP } from './table/table.component';
+import { StepComponentP } from './step/step.component';
+
 @NgModule({
   declarations: [
     DropdownmenuComponent,
@@ -53,6 +56,7 @@ import { TableComponentP } from './table/table.component';
     TabsComponent,
     TabNavComponent,
     TableComponent,
+    StepComponent,
     CalendarComponentP,
     DatePickerComponentP,
     LoadingComponentP,
@@ -65,6 +69,8 @@ import { TableComponentP } from './table/table.component';
     FixBoxComponent,
     TabsComponentP,
     TableComponentP,
+    StepComponentP,
+    StepItemComponent,
   ],
   imports: [CommonModule, WccRoutingModule],
 })

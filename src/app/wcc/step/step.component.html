@@ -1,0 +1,42 @@
+<div class="step-container">
+  <R-step [(currentIndex)]="currentIndex" (currentIndexChange)="haha($event)">
+    <R-step-item
+      title="哈哈哈"
+      description="这是一个描述1111111111111"
+    ></R-step-item>
+    <R-step-item
+      title="嘿嘿嘿"
+      description="这是一个描述2222222222222"
+    ></R-step-item>
+    <R-step-item
+      title="哦加哦"
+      description="这是一个描述3333333333333"
+    ></R-step-item>
+  </R-step>
+  <div class="api" id="api">
+    <table>
+      <thead>
+        <tr>
+          <th>参数</th>
+          <th>作用</th>
+          <th>类型</th>
+          <th>可取值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>currentIndex</td>
+          <td>当前索引</td>
+          <td>number</td>
+          <td>数字</td>
+        </tr>
+        <tr>
+          <td>(currentIndexChange)</td>
+          <td>回调事件</td>
+          <td>EventEmitter</td>
+          <td>回调方法</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
