@@ -64,6 +64,10 @@ export class AppComponent {
       name: 'step 步骤条',
       path: '/step',
     },
+    {
+      name: 'upload 图片上传',
+      path: '/upload',
+    },
   ];
   title = 'angular2-R-ui';
   dateValue = '';

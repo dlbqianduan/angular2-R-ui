@@ -13,7 +13,8 @@ import { ProgressComponentP } from './progress/progress.component';
 import { TabsComponentP } from './tabs/tabs.component';
 import { TableComponentP } from './table/table.component';
 import { StepComponentP } from './step/step.component';
-const routes: Routes = [
+import { UploadComponentP } from './upload/upload.component';
+const routes: Routes = [ 
   {
     path: 'dropDown',
     component: DropdownComponent,
@@ -65,6 +66,10 @@ const routes: Routes = [
   {
     path: 'step',
     component: StepComponentP,
+  },
+  {
+    path: 'upload',
+    component: UploadComponentP,
   },
 ];
 

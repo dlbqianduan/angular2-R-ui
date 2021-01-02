@@ -1,0 +1,12 @@
+<div class="upload-container">
+    <div class="upload flex">
+        <input #file id="file" type="file" (change)="fileChange($event)">
+        <div class="btn flex">
+            <img src="" alt="">
+        </div>
+        <div class="btn flex" (click)="upload()">
+            <p>+</p>
+            <p>上传图片</p>
+        </div>
+    </div>
+</div>
