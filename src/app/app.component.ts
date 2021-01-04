@@ -53,20 +53,24 @@ export class AppComponent {
       path: '/progress',
     },
     {
-      name: 'Tabs 标签页',
+      name: '标签页 Tabs',
       path: '/tabs',
     },
     {
-      name: 'table 表格',
+      name: '表格 table',
       path: '/table',
     },
     {
-      name: 'step 步骤条',
+      name: '步骤条 step',
       path: '/step',
     },
     {
-      name: 'upload 图片上传',
+      name: '图片上传 upload',
       path: '/upload',
+    },
+    {
+      name: '复制粘贴 copy',
+      path: '/copy',
     },
   ];
   title = 'angular2-R-ui';

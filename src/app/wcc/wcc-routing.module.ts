@@ -14,7 +14,8 @@ import { TabsComponentP } from './tabs/tabs.component';
 import { TableComponentP } from './table/table.component';
 import { StepComponentP } from './step/step.component';
 import { UploadComponentP } from './upload/upload.component';
-const routes: Routes = [ 
+import { CopyComponentP } from './copy/copy.component';
+const routes: Routes = [
   {
     path: 'dropDown',
     component: DropdownComponent,
@@ -70,6 +71,10 @@ const routes: Routes = [
   {
     path: 'upload',
     component: UploadComponentP,
+  },
+  {
+    path: 'copy',
+    component: CopyComponentP,
   },
 ];
 

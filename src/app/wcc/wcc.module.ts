@@ -21,6 +21,7 @@ import { TableComponent } from '../components/table/table.component';
 import { StepComponent } from '../components/step/step.component';
 import { StepItemComponent } from '../components/step/step-item/step-item.component';
 import { UploadComponent } from '../components/upload/upload.component';
+import { CopyComponent } from '../components/copy/copy.component';
 
 import { WccComponent } from './wcc/wcc.component';
 import { CalendarComponentP } from './calendar/calendar.component';
@@ -37,6 +38,7 @@ import { TabsComponentP } from './tabs/tabs.component';
 import { TableComponentP } from './table/table.component';
 import { StepComponentP } from './step/step.component';
 import { UploadComponentP } from './upload/upload.component';
+import { CopyComponentP } from './copy/copy.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,7 @@ import { UploadComponentP } from './upload/upload.component';
     TableComponent,
     StepComponent,
     UploadComponent,
+    CopyComponent,
     CalendarComponentP,
     DatePickerComponentP,
     LoadingComponentP,
@@ -75,6 +78,7 @@ import { UploadComponentP } from './upload/upload.component';
     StepComponentP,
     UploadComponentP,
     StepItemComponent,
+    CopyComponentP,
   ],
   imports: [CommonModule, WccRoutingModule],
 })
