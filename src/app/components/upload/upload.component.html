@@ -1,12 +1,24 @@
 <div class="upload-container">
-    <div class="upload flex">
-        <input #file id="file" type="file" (change)="fileChange($event)">
-        <div class="btn flex">
-            <img src="" alt="">
-        </div>
-        <div class="btn flex" (click)="upload()">
-            <p>+</p>
-            <p>上传图片</p>
-        </div>
+  <div class="upload flex">
+    <input #file id="file" type="file" (change)="fileChange($event)" />
+    <div class="btn flex" *ngFor="let item of resultImg; let ind = index">
+      <img [src]="item" alt="" />
+      <div class="hover flex">
+        <span (click)="preview(ind)">预览</span>&nbsp;<span
+          (click)="delete(ind)"
+          >删除</span
+        >
+      </div>
     </div>
+    <div class="btn flex" (click)="upload()">
+      <p>+</p>
+      <p>上传图片</p>
+    </div>
+  </div>
+  <div class="preview" *ngIf="showPreview">
+    <div class="img-wrap">
+      <img [src]="previewImg" alt="" />
+      <i (click)="this.showPreview = false" class="close-icon"></i>
+    </div>
+  </div>
 </div>

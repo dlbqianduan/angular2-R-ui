@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'R-uploadP',
   templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.less']
+  styleUrls: ['./upload.component.less'],
 })
 export class UploadComponentP implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  uploadChange(e) {
+    console.log(e, 11111);
   }
-
 }
